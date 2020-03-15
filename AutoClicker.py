@@ -5,10 +5,13 @@ import keyboard
 import time
 import sys
 
+
+
 root  = tk.Tk()
 root.title("AutoClicker")
-root.geometry("350x250")
+root.geometry("350x260")
 root.iconbitmap("icon.ico")
+
 
 clickedTimes = tk.StringVar()
 countDown = tk.StringVar()
@@ -34,7 +37,7 @@ def presser():
             if keyboard.is_pressed('q'):  
                 print('Stopping autoclicker')
                 sys.exit(1)
-        
+
             time.sleep(sleepTime)
             mouse.press(Button.left)
             mouse.release(Button.left)
@@ -45,7 +48,6 @@ def presser():
     except ValueError:
         messagebox.showerror("Error", "You need to type a number")
 
-"Until autoclicker starts"
 
 def countdown():
     count = 6
@@ -74,7 +76,7 @@ fast.config(font=('Arial', 10))
 fast.pack()
 
 
-e1 = tk.Entry(root) 
+e1 = tk.Entry(root)
 e1.pack()
 e1.get()
 
@@ -91,11 +93,13 @@ label2 = tk.Label(root, textvariable=clickedTimes)
 label2.config(font=('Arial', 30))
 label2.pack()
 
-
-
 label4 = tk.Label(root, textvariable=countDown)
 label4.config(font=('Arial', 30))
 label4.pack()
+
+exiter = tk.Label(root, text="Hold q to stop the autoclicker")
+exiter.config(font=('Arial', 10))
+exiter.pack()
 
 root.mainloop()
 
